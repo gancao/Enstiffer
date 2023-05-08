@@ -1,7 +1,7 @@
 # Enstiffer #
 
 
-Enstiffer is a R-based computational software for eastimation of tissue stiffness based on ligand-receptors interaction from RNA-seq data. This tool was tested on various RNA-seq datasets across several sequencing platforms including bulk RNA-seq, Visium, slide-RNA-seq, Nanostring GeoMx Digital Spatial Profiling, Xenium and so on. Enstiffer was tested on Windows 11 and CentOS 7. Users can not only predict tissue stiffness from RNA-seq data but also indeitfy highly contributed ligangd-receptors to tissue stiffness. Enstiffer can provide new molecular targeted therapy for different diseases.
+Enstiffer is a R-based computational software for eastimation of tissue stiffness based on ligand-receptors interaction from RNA-seq data. This tool was tested on various RNA-seq datasets across several sequencing platforms including bulk RNA-seq, Visium, slide-RNA-seq, Nanostring GeoMx Digital Spatial Profiling, Xenium and so on. Enstiffer was tested on Windows 11 and CentOS 7. Through Enstiffer, users can not only predict tissue stiffness from RNA-seq data but also identify highly contributed ligangd-receptors to tissue stiffness. Enstiffer could probably provide new molecular targeted therapy for different diseases.
 
 ![Enstiffer](https://github.com/gancao/Enstiffer/blob/main/files/Enstiffer.png)
 
@@ -42,7 +42,7 @@ The contents of the output directory include three files: <br>
 3. **<prefix\>\_sample\_LR\_contribution.txt**: A matrix file that saves ligand-receptor  contribution scores where row represent samples, columns represent ligand-receptors and the values represent the corresponding contribution score. <br>
 
 ## Others ##
-We provide test files under "files". In addition, we provide training codes under "train" as well as analyzed codes under "analysis".
+We provide test files (GSE145429_tpm.txt) under "files". In addition, we provide training codes under "train" as well as analyzed codes under "analysis".
 
 
 
