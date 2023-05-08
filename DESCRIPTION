@@ -7,7 +7,7 @@ Author: First Last [aut, cre] (YOUR-ORCID-ID)
 Maintainer: First Last <first.last@example.com>
 Description: Estimation of Stiffness by ligand-receptors from RNA-seq data
 License:  a license
-Depends: foreach, doParallel, ggplot2, R (>= 3.6.0)
+Depends: foreach, doParallel, R (>= 3.6.0)
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
         license
 Imports: Matrix
