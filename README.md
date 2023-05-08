@@ -1,7 +1,5 @@
 # Enstiffer #
 
-----------
-
 
 Enstiffer is a R-based computational software for eastimation of tissue stiffness based on ligand-receptors interaction from RNA-seq data. This tool was tested on various RNA-seq datasets across several sequencing platforms including bulk RNA-seq, Visium, slide-RNA-seq, Nanostring GeoMx Digital Spatial Profiling, Xenium and so on. Enstiffer was tested on Windows 11 and CentOS 7. Users can not only predict tissue stiffness from RNA-seq data but also indeitfy highly contributed ligangd-receptors to tissue stiffness. Enstiffer can provide new molecular targeted therapy for different diseases.
 
