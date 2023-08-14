@@ -1,26 +1,26 @@
-# Enstiffer #
+# RedeStiff #
 
 
-Enstiffer is a R-based computational software for eastimation of tissue stiffness based on ligand-receptors interaction from RNA-seq data. This tool was tested on various RNA-seq datasets across several sequencing platforms including bulk RNA-seq, Visium, slide-RNA-seq, Nanostring GeoMx Digital Spatial Profiling, Xenium and so on. Enstiffer was tested on Windows 11 and CentOS 7. Through Enstiffer, users can not only predict tissue stiffness from RNA-seq data but also identify highly contributed ligangd-receptors to tissue stiffness. Enstiffer could probably provide new molecular targeted therapy for different diseases.
+RedeStiff is a R-based computational software for eastimation of tissue stiffness based on ligand-receptors interaction from RNA-seq data. This tool was tested on various RNA-seq datasets across several sequencing platforms including bulk RNA-seq, Visium, slide-RNA-seq, Nanostring GeoMx Digital Spatial Profiling, Xenium and so on. RedeStiff was tested on Windows 11 and CentOS 7. Through RedeStiff, users can not only predict tissue stiffness from RNA-seq data but also identify highly contributed ligangd-receptors to tissue stiffness. RedeStiff could probably provide new molecular targeted therapy for different diseases.
 
-![Enstiffer](https://github.com/gancao/Enstiffer/blob/main/files/Enstiffer.png)
+![RedeStiff](https://github.com/gancao/RedeStiff/blob/main/files/RedeStiff.png)
 
 ## Installtion ##
 
     install.packages("devtools")
 	library(devtools)
-    devtools::install_github("gancao/Enstiffer")
+    devtools::install_github("gancao/RedeStiff")
 
 ## Usage ##
-Before running Enstiffer, the users require downloading the trained ligand-receptor (LR) weight list file from [https://github.com/gancao/Enstiffer](https://github.com/gancao/Enstiffer "Enstiffer") and providing expression matrix file in TPM values (Row:Gene, Column: Sample).  In addition, output folder (result\_dir) and the prefix name of reuslt files are required to input to Enstiffer. <br>
+Before running RedeStiff, the users require downloading the trained ligand-receptor (LR) weight list file from [https://github.com/gancao/RedeStiff](https://github.com/gancao/RedeStiff "RedeStiff") and providing expression matrix file in TPM values (Row:Gene, Column: Sample).  In addition, output folder (result\_dir) and the prefix name of reuslt files are required to input to RedeStiff. <br>
 **step1: download LR weight list file** <br>
 
-    wget -c https://github.com/gancao/Enstiffer/blob/main/files/LR_weights_final.txt
+    wget -c https://github.com/gancao/RedeStiff/blob/main/files/LR_weights_final.txt
 
-**step2: run Enstiffer** <br>
+**step2: run RedeStiff** <br>
 
-    library(Enstiffer)
-    analyse_stiffness(train_LR_weight_file,exp_file,result_dir,prefix='Enstiffer',parallel_flag='yes',cores=50)
+    library(RedeStiff)
+    analyse_stiffness(train_LR_weight_file,exp_file,result_dir,prefix='RedeStiff',parallel_flag='yes',cores=50)
 
 The required parameters are listed as follows:
 
