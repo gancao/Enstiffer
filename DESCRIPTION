@@ -1,4 +1,5 @@
-Package: Enstiffer
+<<<<<<< HEAD
+Package: RedeStiff
 Type: Package
 Title: Estimation Of Stiffness By Ligand-Receptors From RNA-seq data
 Version: 1.0
@@ -7,7 +8,22 @@ Author: First Last [aut, cre] (YOUR-ORCID-ID)
 Maintainer: First Last <first.last@example.com>
 Description: Estimation of Stiffness by ligand-receptors from RNA-seq data
 License:  a license
-Depends: foreach, doParallel, R (>= 3.6.0)
+Depends: foreach, ggplot2, R (>= 3.6.0)
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
         license
 Imports: Matrix
+=======
+Package: RedeStiff
+Type: Package
+Title: Estimation Of Stiffness By Ligand-Receptors From RNA-seq data
+Version: 1.0
+Date: 2023-02-23
+Author: First Last [aut, cre] (YOUR-ORCID-ID)
+Maintainer: First Last <first.last@example.com>
+Description: Estimation of Stiffness by ligand-receptors from RNA-seq data
+License:  a license
+Depends: foreach, doParallel, ggplot2, R (>= 3.6.0)
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+        license
+Imports: Matrix
+>>>>>>> 0ae2e2b (update)
