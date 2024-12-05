@@ -64,7 +64,7 @@ The contents of the output directory include three files: <br>
 3. **<prefix\>\_sample\_LR\_contribution.txt**: A matrix file that saves ligand-receptor  contribution scores where row represent samples, columns represent ligand-receptors and the values represent the corresponding contribution score. <br>
 
 ## Others ##
-We provide test files (GSE145429_tpm.txt) under "files". In addition, we provide training codes under "train". Other codes and files can be downloaded from https://zenodo.org/records/11514581.
+We provide test files (GSE145429_tpm.txt) under "files". In addition, other files, codes and figures can be downloaded from https://zenodo.org/records/11514581.
 
 
 
