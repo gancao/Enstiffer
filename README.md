@@ -1,7 +1,7 @@
 # RedeStiff #
 
 
-RedeStiff is a R-based computational software for eastimation of tissue stiffness based on ligand-receptors interaction from RNA-seq data. This tool was tested on various RNA-seq datasets across several sequencing platforms including bulk RNA-seq, Visium, slide-RNA-seq, Nanostring GeoMx Digital Spatial Profiling, Xenium and so on. RedeStiff was tested on Windows 11 and CentOS 7. Through RedeStiff, users can not only predict tissue stiffness from RNA-seq data but also identify highly contributed ligand-receptors to tissue stiffness. RedeStiff could probably provide new molecular targeted therapy for different diseases.
+RedeStiff is a R-based computational software for eastimation of tissue stiffness score based on ligand-receptors interaction from RNA-seq data. This tool was tested on various RNA-seq datasets across several sequencing platforms including bulk RNA-seq, Visium, slide-RNA-seq, Xenium and so on. RedeStiff was tested on Windows 11 and CentOS 7. Through RedeStiff, users can not only predict tissue stiffness score from RNA-seq data but also identify highly contributed ligand-receptors to tissue stiffness. RedeStiff could probably provide new molecular targeted therapy for different diseases.
 
 ![RedeStiff](https://github.com/gancao/RedeStiff/blob/main/files/RedeStiff.png)
 
@@ -21,7 +21,26 @@ Before running RedeStiff, the users require downloading the trained ligand-recep
 
     library(RedeStiff)
     analyse_stiffness(train_LR_weight_file,exp_file,result_dir,prefix='RedeStiff',parallel_flag='yes',cores=50)
-
+**Alternatively, you can run RedeStiff by three stages: ** <br>
+    exp_count <- read.delim(exp_file,header=T,row.names=1,check.names=F)
+    #step1:calculate LR score matrix
+    LR_sample_matrix <- calculate_LR_score(exp_count,train_LR_weight_file,parallel_flag='yes',cores)
+    sample_LR_matrix <- t(LR_sample_matrix)
+    save_sample_lr_matrix_file <- paste(result_dir,'/',prefix,'_sample_LR_score.txt',sep='')
+    write.table(sample_LR_matrix,save_sample_lr_matrix_file,quote=F,sep="\t")
+    
+    LR_weights <- read.delim(train_LR_weight_file,header=T,check.names = F)
+    lr_weights <- LR_weights[,2]
+    names(lr_weights) <- as.character(LR_weights[,1])
+    
+    print('step2:calculate stiffness')
+    data_result <- calculate_stiffness(save_sample_lr_matrix_file,lr_weights,result_dir,prefix)
+    data_result_file <- paste(result_dir,'/',prefix,'_stiffness.txt',sep='')
+    data_result <- read.delim(data_result_file,header=T)
+    
+    #step3:calculate LR contribution
+    predict_LR_contribution(save_sample_lr_matrix_file,lr_weights,data_result,result_dir,prefix)
+    
 The required parameters are listed as follows:
 
 - train\_LR\_weight_file: The trained LR weight table file in two colums, the first column represents LR pairs and the second column represents corresponding weight of the LR.
@@ -42,7 +61,7 @@ The contents of the output directory include three files: <br>
 3. **<prefix\>\_sample\_LR\_contribution.txt**: A matrix file that saves ligand-receptor  contribution scores where row represent samples, columns represent ligand-receptors and the values represent the corresponding contribution score. <br>
 
 ## Others ##
-We provide test files (GSE145429_tpm.txt) under "files". In addition, we provide training codes under "train" as well as analyzed codes under "analysis".
+We provide test files (GSE145429_tpm.txt) under "files". In addition, we provide training codes under "train". Other codes and files can be downloaded from https://zenodo.org/records/11514581.
 
 
 
